@@ -1,0 +1,6 @@
+# pull official base image
+FROM postgres:13-alpine
+
+# add initialization shell script to the docker entrypoint
+ADD initialize_database_test.sh /docker-entrypoint-initdb.d
+ADD ./sql_files/* .
